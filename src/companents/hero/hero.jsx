@@ -1,61 +1,106 @@
 import { Component } from "react";
 import './hero.css'
+// import RamBtns from './RamBtns.jsx';
 
 class Hero extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      count: 12497000,
-      inp: 1
+      objram: {
+        ram: 8,
+        xotira: 256,
+        price: 12497000,
+        skidca: 14621000,
+        inp: 1,
+      }
     }
   }
 
-  macObject = [
-    {
-      id: 1,
-      title: "MacBook Air 13-inch",
-      ram: 8,
-      med: [
-        {
-          active: true,
+  ram8_256_Func = () => {
+    this.setState({
+      objram: {
+        ram: 8,
+        xotira: 256,
+        price: 12497000,
+        skidca: 14621000,
+        inp: 1,
+      }
+    })
+  }
+
+  ram8_512_Func = () => {
+    this.setState({
+      objram: {
+        ram: 8,
+        xotira: 512,
+        price: 15066000,
+        skidca: 17627500,
+        inp: 1,
+      }
+    })
+  }
+
+  ram16_256_Func = () => {
+    this.setState({
+      objram: {
+        ram: 8,
+        xotira: 256,
+        price: 16935000,
+        skidca: 19813500,
+        inp: 1,
+      }
+    })
+  }
+
+  ram16_512_Func = () => {
+    this.setState({
+      objram: {
+        ram: 8,
+        xotira: 512,
+        price: 19270500,
+        skidca: 22546500,
+        inp: 1,
+      }
+    })
+  }
+
+  ram16_1024_Func = () => {
+    this.setState({
+      objram: {
+        ram: 8,
+        xotira: 1024,
+        price: 20438500,
+        skidca: 23913000,
+        inp: 1,
+      }
+    })
+  }
+
+  ram8_256_addFunc = () => {
+    this.setState({
+      objram: {
+        ram: 8,
+        xotira: 256,
+        price: this.state.objram.price + 12497000,
+        skidca: this.state.objram.skidca + 14621000,
+        inp: this.state.objram.inp + 1,
+      }
+    })
+  }
+
+  ram8_256_remFunc = () => {
+    if (this.state.objram.inp > 1) {
+      this.setState({
+        objram: {
+          ram: 8,
           xotira: 256,
-          price: 12497000,
-          skidca: 14621000,
-        },
-        {
-          active: false,
-          xotira: 512,
-          price: 15066000,
-          skidca: 17627500,
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: "MacBook Air 13-inch",
-      ram: 16,
-      med: [
-        {
-          active: true,
-          xotira: 256,
-          price: 16935000,
-          skidca: 19813500,
-        },
-        {
-          active: false,
-          xotira: 512,
-          price: 19270500,
-          skidca: 22546500,
-        },
-        {
-          active: false,
-          xotira: 1024,
-          price: 20438500,
-          skidca: 23913000,
-        },
-      ],
-    },
-  ]
+          price: this.state.objram.price - 12497000,
+          skidca: this.state.objram.skidca - 14621000,
+          inp: this.state.objram.inp - 1,
+        }
+      })
+    }
+  }
 
   remFun = () => {
     if (this.state.count >= 12497000) {
@@ -111,11 +156,63 @@ class Hero extends Component {
           <div className="mac__inner">
             <div className="mac__left left">
               <div className="left__box">
-                <ul className="left__list"></ul>
+                <ul className="left__list">
+                  <li className="left__item">
+                    <div class="left__img-box">
+                      <img className="left__mac-img" src="https://cdn.macbro.uz/macbro/94afd179-46f3-49df-aaa5-de83d8210be1" alt="img" />
+                    </div>
+                  </li>
+                  <li className="left__item">
+                    <div class="left__img-box">
+                      <img className="left__mac-img" src="https://cdn.macbro.uz/macbro/d396e206-2cb4-4ae0-8549-6496ae82f7ca" alt="img" />
+                    </div>
+                  </li>
+                  <li className="left__item">
+                    <div class="left__img-box">
+                      <img className="left__mac-img" src="https://cdn.macbro.uz/macbro/32740eb9-79c2-4f28-93f8-5a04c8672f12" alt="img" />
+                    </div>
+                  </li>
+                  <li className="left__item">
+                    <div class="left__img-box">
+                      <img className="left__mac-img" src="https://cdn.macbro.uz/macbro/605bacc5-0b9d-4736-a189-32380916d1bf" alt="img" />
+                    </div>
+                  </li>
+                  <li className="left__item">
+                    <div class="left__img-box">
+                      <img className="left__mac-img" src="https://cdn.macbro.uz/macbro/4a2be20b-558e-4dda-852e-413b23b153e3" alt="img" />
+                    </div>
+                  </li>
+                </ul>
                 <button className="left__modalBtn"><i className='bx bx-fullscreen'></i></button>
               </div>
               <div className="left__slider lslid">
-                <ul className="lslid__list"></ul>
+                <ul className="lslid__list">
+                  <li className="lslid__item">
+                    <div class="lslid__img">
+                      <img className="slider--imgs" src="https://cdn.macbro.uz/macbro/94afd179-46f3-49df-aaa5-de83d8210be1" alt="img" />
+                    </div>
+                  </li>
+                  <li className="lslid__item">
+                    <div class="lslid__img">
+                      <img className="slider--imgs" src="https://cdn.macbro.uz/macbro/d396e206-2cb4-4ae0-8549-6496ae82f7ca" alt="img" />
+                    </div>
+                  </li>
+                  <li className="lslid__item">
+                    <div class="lslid__img">
+                      <img className="slider--imgs" src="https://cdn.macbro.uz/macbro/32740eb9-79c2-4f28-93f8-5a04c8672f12" alt="img" />
+                    </div>
+                  </li>
+                  <li className="lslid__item">
+                    <div class="lslid__img">
+                      <img className="slider--imgs" src="https://cdn.macbro.uz/macbro/605bacc5-0b9d-4736-a189-32380916d1bf" alt="img" />
+                    </div>
+                  </li>
+                  <li className="lslid__item">
+                    <div class="lslid__img">
+                      <img className="slider--imgs" src="https://cdn.macbro.uz/macbro/4a2be20b-558e-4dda-852e-413b23b153e3" alt="img" />
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -131,9 +228,15 @@ class Hero extends Component {
                 <div className="right__btn-box">
                   <div className="right__ram-box">
                     <h4 className="btns__title">Ram</h4>
+                    <button className="right__ram-btn" onClick={this.ram8_256_Func}>8GB</button>
+                    <button className="right__ram-btn" onClick={this.ram16_512_Func}>16GB</button>
+                    {/* <RamBtns fun={this.ram8_Func} /> */}
                   </div>
                   <div className="right__pamet-box">
                     <h4 className="btns__title">Xotira Hajmi</h4>
+                    <button className="right__pamet-btn" onClick={this.ram8_256_Func}>256GB</button>
+                    <button className="right__pamet-btn" onClick={this.ram8_512_Func}>512GB</button>
+                    <button className="right__pamet-btn" onClick={this.ram16_1024_Func}>1024GB</button>
                   </div>
                   <div className="right__pamet-box">
                     <h4 className="btns__title">Ranglar</h4>
@@ -146,14 +249,14 @@ class Hero extends Component {
                 </div>
 
                 <div className="right__add-rem-box">
-                  <button className="right__rem-btn" id="remCount" onClick={this.remFun}>-</button>
-                  <p className="right__count">{this.state.inp}</p>
-                  <button className="right__add-btn" id="addCount" onClick={this.addFunc}>+</button>
+                  <button className="right__rem-btn" id="remCount" onClick={this.ram8_256_remFunc}>-</button>
+                  <p className="right__count">{this.state.objram.inp}</p>
+                  <button className="right__add-btn" id="addCount" onClick={this.ram8_256_addFunc}>+</button>
                 </div>
 
                 <div className="right__price">
-                  <p className="right__price" id="price1">{this.state.count} so'm</p>
-                  <p className="right__price2" id="price2">14621000 so'm</p>
+                  <p className="right__price" id="price1">{this.state.objram.price} so'm</p>
+                  <p className="right__price2" id="price2">{this.state.objram.skidca} so'm</p>
                 </div>
 
                 <div className="right__submit-box">
@@ -164,9 +267,9 @@ class Hero extends Component {
             </div>
           </div>
         </div>
-      </section>
+      </section >
     )
   }
 }
 
-export default Hero
+export default Hero;
